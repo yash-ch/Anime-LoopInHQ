@@ -1,0 +1,15 @@
+.dialog-image{
+  @media only screen and (max-width: 768px) {
+    max-width: 90vw;
+  }
+}
+
+.dialog-info-title{
+  font-size: 110%;
+  font-weight: 500;
+  color: black !important;
+}
+
+.dialog{
+  min-width: 800px !important;
+}

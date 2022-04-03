@@ -4,6 +4,7 @@ import {Card, CardMedia} from "@mui/material";
 import Box from "@mui/material/Box";
 import DialogContentText from "@mui/material/DialogContentText";
 import * as React from "react";
+import "../css/GeneralComponent.scss";
 
 const animeInformationTitleList = [
     {name: "Original Movie Title", id: "original_title"},
@@ -20,7 +21,9 @@ export function dialogContent(animeDataWithIndex) {
     return (<div>
         <DialogTitle id="scroll-dialog-title">{animeDataWithIndex["title"]}</DialogTitle>
         <DialogContent dividers={true}>
-            <Card>
+            <Card
+                className={"dialog-image"}
+            >
                 <CardMedia
                     component="img"
                     image={animeDataWithIndex["movie_banner"]}
