@@ -1,0 +1,163 @@
+.background {
+  background-color: black;
+}
+
+.banner-image {
+  z-index: 1;
+  background-size: cover;
+  display: block;
+  width: 100vw;
+  position: relative;
+  top: -100px;
+  margin-bottom: -50px;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+  @media only screen and (max-width: 1250px) {
+    width: 130% !important;
+  }
+}
+
+.banner-image-portrait {
+  z-index: 1;
+  display: none;
+  width: 100vw;
+  position: relative;
+  top: -60px;
+  @media only screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.title-image {
+  z-index: 2;
+  display: block;
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  @media only screen and (max-width: 768px) {
+    width: 80vw;
+  }
+}
+
+.banner-des {
+  color: white;
+  text-shadow: 3px 3px 3px #000000;
+  text-align: center;
+  width: 50vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 110%;
+  position: relative;
+  z-index: 3;
+  font-weight: 400;
+  @media only screen and (max-width: 768px) {
+    margin-top: 24vw;
+    width: 75vw;
+    text-shadow: 1px 1px 4px #000000;
+    //display: none;
+  }
+}
+.banner-title{
+  color: white;
+  text-shadow: 2px 2px 3px #000000;
+  text-align: center;
+  margin-bottom: -2vh;
+  margin-top: -100vh !important;
+  font-size: 5vw;
+  position: relative;
+  z-index: 3;
+  font-weight: 700;
+  @media only screen and (max-width: 768px) {
+    display: none;
+    margin-top: 0vh !important;
+  }
+  @media only screen and (max-width: 1250px) {
+    margin-top: -65vw !important;
+  }
+}
+
+.button-text {
+  font-weight: 500 !important;
+  font-size: 110%;
+  text-transform: none;
+}
+
+.banner-buttons {
+  font-size: 85% !important;
+  z-index: 3;
+  text-transform: none;
+  background-color: white !important;
+  color: black !important;
+  box-shadow: 2px 2px 4px #000000;
+  width: 100% !important;
+  height: 40px;
+  padding: 0 0 0 0 !important;
+  justify-content: center;
+  margin-bottom: 20px !important;
+  @media only screen and (max-width: 1250px) {
+    // width: 120px !important;
+    padding-left: 30px;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 65% !important;
+    margin-bottom: -140vw;
+    width: 80% !important;
+    height: 30px !important;
+    margin-left: 15% !important;
+  }
+}
+
+.button-grid {
+  position: relative;
+  z-index: 3;
+  margin-top: 50px;
+  margin-bottom: 5vw;
+  background: #00000000 !important;
+  @media only screen and (max-width: 768px) {
+    //margin-top: 200px;
+  }
+}
+
+.moving-up {
+  margin-bottom: -45vw;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: -140vw;
+  }
+}
+
+.gradient {
+  background-image: linear-gradient(rgba(255, 0, 0, 0), rgb(0, 0, 0));
+  height: 300px;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  top: -12vh;
+  z-index: 3;
+  @media only screen and (max-width: 768px) {
+    height: 300px;
+    top: -40vw;
+  }
+  @media only screen and (max-width: 1250px) {
+    height: 100px;
+    margin-top: 15vh;
+  }
+  @media only screen and (max-width: 992px) {
+    margin-top: 20vh;
+  }
+}
+.box{
+  background: black;
+  height: 160px;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  top: -12vh;
+  z-index: 3;
+  @media only screen and (max-width: 768px) {
+    //top: -160px;
+    top : -40vw;
+  }
+}

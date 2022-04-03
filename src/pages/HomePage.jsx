@@ -1,8 +1,12 @@
 import documentTile from "../documentTile";
 import Header from "../components/Header";
+import HomePageBanner from "../components/HomePageBanner";
+import AnimeList from "../components/AnimeList";
+import AnimiaFooter from "../components/Footer";
 
 export default function HomePage(){
-    documentTile("Anime")
+    documentTile("Animia")
+
     return (
         <div style={{
             background: "black",
@@ -10,13 +14,10 @@ export default function HomePage(){
             overflowX:"hidden",
         }}>
             <Header/>
-            {/*<HomePageBanner/>*/}
-            {/*<HomePageCarousel index={"Trending in India"}/>*/}
-            {/*<HomePageCarousel index={"Science Fiction"}/>*/}
-            {/*<HomePageCarousel index={"Action"}/>*/}
-            {/*<HomePageCarousel index={"Drama"}/>*/}
+            <HomePageBanner/>
+            <AnimeList/>
             <div style={{marginBottom:"6vh"}}/>
-            {/*<SumplayFooter/>*/}
+            <AnimiaFooter/>
         </div>
     );
 }

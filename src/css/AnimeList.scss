@@ -1,0 +1,72 @@
+.bg {
+  overflow-x: hidden;
+  color: white;
+  background-size: cover;
+}
+
+.popup {
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.card-image {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.portrait-poster {
+  height: 20vw;
+  @media only screen and (max-width: 768px) {
+    height: 44vw;
+  }
+  @media only screen and (max-width: 1250px) {
+    height: 44vw;
+  }
+}
+
+#parent {
+  margin-top: -60vh;
+  position: relative;
+  margin-right: 2vw;
+  //margin-left: 1vw;
+  z-index: 3;
+  @media only screen and (max-width: 768px) {
+    margin-top: -90vw !important;
+  }
+  @media only screen and (max-width: 1250px) {
+    margin-top: -50vw;
+  }
+}
+
+.recommendations{
+  margin-left: 3vw;
+  color: white;
+  font-size: 160%;
+  font-weight: 500;
+  text-shadow:2px 2px 3px #000000;
+  @media only screen and (max-width: 768px) {
+  font-size: 130%;
+  }
+}
+
+.poster-row{
+  margin-bottom: 6vh !important;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 1vh !important;
+  }
+}
+
+.dialog-info-title{
+  font-size: 110%;
+  font-weight: 500;
+  color: black !important;
+}
+
+.dialog{
+  min-width: 800px !important;
+}

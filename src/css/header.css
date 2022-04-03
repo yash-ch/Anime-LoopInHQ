@@ -1,10 +1,10 @@
-.sum-header {
+.anime-header {
     width: 100%;
     /* background-color: black !important; */
-    background: #00000077 !important;
+    background: rgba(0, 0, 0, 0.63) !important;
 }
 
-.sum-search-icon {
+.anime-search-icon {
     float: right;
     pointer-events: none;
     display: flex;
@@ -12,7 +12,7 @@
     justify-content: center;
 }
 
-.sum-key-icon {
+.anime-key-icon {
     padding-top: 0.5%;
     height: 100%;
     float: left;
@@ -23,11 +23,11 @@
     justify-content: center;
 }
 
-.sum-key-icon:hover {
+.anime-key-icon:hover {
     color: #000000;
 }
 
-.sum-header-button {
+.anime-header-button {
     position: relative;
     border-radius: 50px;
     color: white;
@@ -38,12 +38,12 @@
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sum-header-button:hover {
+.anime-header-button:hover {
     background-color: rgba(255, 255, 255, 0.6);
     transform: translateY(-4px);
 }
 
-.sum-header-more-button {
+.anime-header-more-button {
     position: relative;
     color: white;
     border-radius: 50px;
@@ -56,12 +56,12 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .sum-header-more-button {
-        background-color: #000000;
+    .anime-header-more-button {
+        background-color: rgba(0, 0, 0, 0);
     }
 }
 
-.sum-header-more-button:hover {
+.anime-header-more-button:hover {
     background-color: rgba(255, 255, 255, 0.6);
     transform: translateY(-4px);
 }

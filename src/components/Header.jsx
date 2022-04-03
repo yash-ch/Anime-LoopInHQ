@@ -9,6 +9,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from "react-router-dom";
 import "../css/header.css"
 import {Menu, MenuItem} from "@mui/material";
+import {toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure()
 
 export default function Header(props) {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -24,17 +28,17 @@ export default function Header(props) {
     return (
         <div>
             <Box sx={{flexGrow: 1}}  style={{ position: 'relative', zIndex: '3' }}>
-                <AppBar className="sum-header" position="static">
+                <AppBar className="anime-header" position="static">
                     <Toolbar>
                         <Link to={"/"} style={{textDecoration: "none"}}>
                             <Box sx={{display: {md: 'flex'}}}>
-                                {/*<img src={"assets/svg/sumplaylogo.png"} alt="Logo" height={30}/>*/}
+                                <img src={"assets/animia.png"} alt="Logo" height={40}/>
                             </Box>
                         </Link>
                         <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}/>
                         <Box sx={{display: {xs: 'none', md: 'flex'}}}>
                             <Search id='search'>
-                                <div className='sum-key-icon'>
+                                <div className='anime-key-icon'>
                                     <div onClick={() => {
                                         console.log("Aaaaaaa")
                                     }}>
@@ -55,13 +59,13 @@ export default function Header(props) {
                             marginRight: "2vw"
                         }}>
                             <Box sx={{display: {xs: 'none', md:"flex"}}}>
-                                <button className='sum-header-button' onClick={() => {
+                                <button className='anime-header-button' onClick={() => {
                                     console.log(window.location.host);
                                 }
                                 }>Account
                                 </button>
                             </Box>
-                            <button className='sum-header-more-button' onClick={
+                            <button className='anime-header-more-button' onClick={
                                 handleClick
                             }><MenuIcon/></button>
                             <Menu
