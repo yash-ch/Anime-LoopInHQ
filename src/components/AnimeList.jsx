@@ -83,7 +83,7 @@ export default function AnimeList() {
                     aria-describedby="scroll-dialog-description"
                     className="dialog"
                 >
-                    <DialogTitle id="scroll-dialog-title">{animeData["title"]}</DialogTitle>
+                    <DialogTitle id="scroll-dialog-title">{animeData[movieIndex]["title"]}</DialogTitle>
                     <DialogContent>
                         {dialogContent(animeData[movieIndex])}
                         <Button onClick={handleClose}>Close</Button>

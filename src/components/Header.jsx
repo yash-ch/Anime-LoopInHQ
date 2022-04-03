@@ -36,24 +36,6 @@ export default function Header(props) {
                             </Box>
                         </Link>
                         <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}/>
-                        <Box sx={{display: {xs: 'none', md: 'flex'}}}>
-                            <Search id='search'>
-                                <div className='anime-key-icon'>
-                                    <div onClick={() => {
-                                        console.log("Aaaaaaa")
-                                    }}>
-                                        <SearchIcon/>
-                                    </div>
-                                </div>
-                                <StyledInputBase
-                                    placeholder="Search..."
-                                    inputProps={{'aria-label': 'search'}}
-                                    onKeyDown={(e) => {
-                                        console.log("aa")
-                                    }}
-                                />
-                            </Search>
-                        </Box>
                         <Box sx={{flexGrow: 1}}/>
                         <Box sx={{display: {md: 'flex'}}} style={{
                             marginRight: "2vw"

@@ -13,3 +13,10 @@
 .dialog{
   min-width: 800px !important;
 }
+
+.dialog-written-content{
+  @media only screen and (max-width: 768px) {
+    //max-width: 90vw;
+  padding-right: 90vw !important;
+  }
+}

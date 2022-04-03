@@ -32,7 +32,7 @@ export function dialogContent(animeDataWithIndex) {
             <Box style={{height: "20px"}}/>
             {animeInformationTitleList.map((type) => {
                 return (
-                    <div>
+                    <div  className={"dialog-written-content"}>
                         <DialogContentText
                             id="scroll-dialog-description"
                             tabIndex={-1}
