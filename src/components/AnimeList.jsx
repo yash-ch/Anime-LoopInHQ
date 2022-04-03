@@ -1,5 +1,5 @@
 import "../css/AnimeList.scss"
-import {Card, CardMedia, CircularProgress, Grid, useMediaQuery, useTheme} from "@mui/material"
+import {Card, CardMedia, CircularProgress, DialogContent, Grid, useMediaQuery, useTheme} from "@mui/material"
 import {useEffect, useState} from "react";
 import {GetRawData} from "../dataFetch/AllFilmsData";
 import * as React from "react";
@@ -83,15 +83,15 @@ export default function AnimeList() {
                     className="dialog"
                 >
                     {dialogContent(animeData[movieIndex])}
-                    <DialogActions>
+                    <DialogContent>
                         <Button onClick={handleClose}>Close</Button>
-                    </DialogActions>
+                    </DialogContent>
                 </Dialog>
             </div>
         );
     } else {
         return (
-            <div style={{ backgroundColor: "#000000", height: "100vh" }}>
+            <div style={{backgroundColor: "#000000", height: "100vh"}}>
                 <Box sx={{
                     display: 'flex',
                     position: 'absolute',
@@ -100,9 +100,9 @@ export default function AnimeList() {
                     marginTop: '-12px',
                     marginLeft: '-12px',
                 }}>
-                    <CircularProgress size={50} />
-                </Box >
-            </div >
+                    <CircularProgress size={50}/>
+                </Box>
+            </div>
         );
     }
 }

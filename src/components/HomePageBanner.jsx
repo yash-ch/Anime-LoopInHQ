@@ -9,7 +9,7 @@ import {TopBanner} from "../dataFetch/AllFilmsData";
 import {dialogContent} from "./GeneralComponents";
 import DialogActions from "@mui/material/DialogActions";
 import Dialog from "@mui/material/Dialog";
-import {useMediaQuery, useTheme} from "@mui/material";
+import {DialogContent, useMediaQuery, useTheme} from "@mui/material";
 
 toast.configure()
 
@@ -81,9 +81,9 @@ export default function HomePageBanner() {
                     className="dialog"
                 >
                     {dialogContent(filmData)}
-                    <DialogActions>
+                    <DialogContent>
                         <Button onClick={handleClose}>Close</Button>
-                    </DialogActions>
+                    </DialogContent>
                 </Dialog>
                 <div className="gradient"/>
                 <div className="box"/>
