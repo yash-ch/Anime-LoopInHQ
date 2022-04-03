@@ -19,8 +19,6 @@ const animeInformationTitleList = [
 
 export function dialogContent(animeDataWithIndex) {
     return (<div>
-        <DialogTitle id="scroll-dialog-title">{animeDataWithIndex["title"]}</DialogTitle>
-        <DialogContent dividers={true}>
             <Card
                 className={"dialog-image"}
             >
@@ -50,7 +48,6 @@ export function dialogContent(animeDataWithIndex) {
                     </div>
                 );
             })}
-        </DialogContent>
     </div>)
 
 }

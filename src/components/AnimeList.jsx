@@ -8,6 +8,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import Box from "@mui/material/Box";
 import {dialogContent} from "./GeneralComponents";
+import DialogTitle from "@mui/material/DialogTitle";
 
 export default function AnimeList() {
     const [success, setSuccess] = useState(0);
@@ -82,8 +83,9 @@ export default function AnimeList() {
                     aria-describedby="scroll-dialog-description"
                     className="dialog"
                 >
-                    {dialogContent(animeData[movieIndex])}
+                    <DialogTitle id="scroll-dialog-title">{animeData["title"]}</DialogTitle>
                     <DialogContent>
+                        {dialogContent(animeData[movieIndex])}
                         <Button onClick={handleClose}>Close</Button>
                     </DialogContent>
                 </Dialog>

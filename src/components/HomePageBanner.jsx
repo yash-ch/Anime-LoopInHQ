@@ -10,6 +10,7 @@ import {dialogContent} from "./GeneralComponents";
 import DialogActions from "@mui/material/DialogActions";
 import Dialog from "@mui/material/Dialog";
 import {DialogContent, useMediaQuery, useTheme} from "@mui/material";
+import DialogTitle from "@mui/material/DialogTitle";
 
 toast.configure()
 
@@ -80,8 +81,9 @@ export default function HomePageBanner() {
                     aria-describedby="scroll-dialog-description"
                     className="dialog"
                 >
-                    {dialogContent(filmData)}
-                    <DialogContent>
+                    <DialogTitle id="scroll-dialog-title">{filmData["title"]}</DialogTitle>
+                    <DialogContent dividers={true}>
+                        {dialogContent(filmData)}
                         <Button onClick={handleClose}>Close</Button>
                     </DialogContent>
                 </Dialog>
