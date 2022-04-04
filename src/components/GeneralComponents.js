@@ -1,5 +1,3 @@
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
 import {Card, CardMedia} from "@mui/material";
 import Box from "@mui/material/Box";
 import DialogContentText from "@mui/material/DialogContentText";
@@ -19,35 +17,38 @@ const animeInformationTitleList = [
 
 export function dialogContent(animeDataWithIndex) {
     return (<div>
-            <Card
-                className={"dialog-image"}
-            >
-                <CardMedia
-                    component="img"
-                    image={animeDataWithIndex["movie_banner"]}
-                    alt={animeDataWithIndex.title}
-                    className="card-image"
-                />
-            </Card>
-            <Box style={{height: "20px"}}/>
-            {animeInformationTitleList.map((type) => {
-                return (
-                    <div  className={"dialog-written-content"}>
-                        <DialogContentText
-                            id="scroll-dialog-description"
-                            tabIndex={-1}
-                            className={"dialog-info-title"}
-                        >
-                            {type.name}
-                        </DialogContentText>
-                        <DialogContentText
-                            id="scroll-dialog-description"
-                            tabIndex={-1}>
-                            {animeDataWithIndex[type.id]}
-                        </DialogContentText>
-                    </div>
-                );
-            })}
+        <Card
+            className={"dialog-image"}
+        >
+            <CardMedia
+                component="img"
+                image={animeDataWithIndex["movie_banner"]}
+                alt={animeDataWithIndex.title}
+                className="card-image"
+            />
+        </Card>
+        <Box style={{height: "20px"}}/>
+        {animeInformationTitleList.map((type) => {
+            return (
+                <div className={"dialog-written-content"}>
+                    <DialogContentText
+                        id="scroll-dialog-description"
+                        tabIndex={-1}
+                        className={"dialog-info-title"}
+                        key={type.name}
+                    >
+                        {type.name}
+                    </DialogContentText>
+                    <DialogContentText
+                        id="scroll-dialog-description"
+                        tabIndex={-1}
+                        key={type.name}
+                    >
+                        {animeDataWithIndex[type.id]}
+                    </DialogContentText>
+                </div>
+            );
+        })}
     </div>)
 
 }

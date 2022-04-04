@@ -1,11 +1,10 @@
 import "../css/AnimeList.scss"
 import {Card, CardMedia, CircularProgress, DialogContent, Grid, useMediaQuery, useTheme} from "@mui/material"
 import {useEffect, useState} from "react";
-import {GetRawData} from "../dataFetch/AllFilmsData";
+import {GetRawData} from "../dataFetch/FilmsData";
 import * as React from "react";
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import Box from "@mui/material/Box";
 import {dialogContent} from "./GeneralComponents";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -13,6 +12,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 export default function AnimeList() {
     const [success, setSuccess] = useState(0);
     const [animeData, setAnimeData] = useState([{}]);
+
     const CONTENT_LOADED = 1, ERROR = 3;
     const [movieIndex, setMovieIndex] = useState(0);
 
@@ -55,7 +55,7 @@ export default function AnimeList() {
                     {animeData.map((movie, index) => {
                         return (
                             <Grid item xs={4} md={2} className="poster-row" key={movie.id}>
-                                <div onClick={handleClickOpen(index)}>
+                                <div onClick={handleClickOpen(index)} key={movie.id}>
                                     <Card style={{
                                         borderRadius: "2vh",
                                         marginLeft: "2.6vw",
@@ -67,6 +67,7 @@ export default function AnimeList() {
                                             image={movie.image}
                                             alt={movie.title}
                                             className="card-image"
+                                            key={movie.id}
                                         />
                                     </Card>
                                 </div>

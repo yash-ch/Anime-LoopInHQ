@@ -5,9 +5,8 @@ import Button from "@mui/material/Button";
 import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {useEffect, useState} from "react";
-import {TopBanner} from "../dataFetch/AllFilmsData";
+import {TopBanner} from "../dataFetch/FilmsData";
 import {dialogContent} from "./GeneralComponents";
-import DialogActions from "@mui/material/DialogActions";
 import Dialog from "@mui/material/Dialog";
 import {DialogContent, useMediaQuery, useTheme} from "@mui/material";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -36,7 +35,6 @@ export default function HomePageBanner() {
         if ((success !== CONTENT_LOADED && success !== ERROR)) {
             animeRandomDataIteration();
         }
-
     },)
 
     function animeRandomDataIteration() {//for loading the data
