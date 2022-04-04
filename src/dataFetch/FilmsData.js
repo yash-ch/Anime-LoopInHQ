@@ -22,7 +22,7 @@ export async function TopBanner() {
     randomFilmIndex = Math.floor(Math.random() * (21)) + 1;
     const bekarImages = [1, 4, 15, 0, 18]
     if (bekarImages.includes(randomFilmIndex) && window.innerWidth < 768) {
-        randomFilmIndex = 21;
+        randomFilmIndex = 5;
     }
     return await GetRawData().then((data) => {
         return data[randomFilmIndex];
