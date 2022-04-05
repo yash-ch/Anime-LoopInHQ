@@ -8,6 +8,7 @@ import {useEffect, useState} from "react";
 import {TopBanner} from "../dataFetch/FilmsData";
 import Box from "@mui/material/Box";
 import {CircularProgress} from "@mui/material";
+import {Link} from "react-router-dom";
 
 toast.configure()
 
@@ -46,10 +47,12 @@ export default function HomePageBanner() {
                 <Grid container className="button-grid">
                     <Grid item xs={4} lg={5.4}/>
                     <Grid item xs={4} lg={1}>
-                        <Button variant="contained" className="banner-buttons popup"><span
-                            style={{fontSize: "180%"}}>🛈</span>&nbsp;&nbsp;<p><span
-                            className="button-text">Know More</span>
-                        </p></Button>
+                        <Link to={`/anime/${filmData.id}`}>
+                            <Button variant="contained" className="banner-buttons popup"><span
+                                style={{fontSize: "180%"}}>🛈</span>&nbsp;&nbsp;<p><span
+                                className="button-text">Know More</span>
+                            </p></Button>
+                        </Link>
                     </Grid>
                 </Grid>
                 <div className="gradient"/>
