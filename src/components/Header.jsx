@@ -4,7 +4,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from "react-router-dom";
 import "../css/header.css"
@@ -14,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure()
 
-export default function Header(props) {
+export default function Header() {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClose = () => {
@@ -25,6 +24,8 @@ export default function Header(props) {
         setAnchorEl(event.currentTarget);
     };
 
+    const animiaLogo = require('../assets/animia.png');
+
     return (
         <div>
             <Box sx={{flexGrow: 1}}  style={{ position: 'relative', zIndex: '3' }}>
@@ -32,7 +33,7 @@ export default function Header(props) {
                     <Toolbar>
                         <Link to={"/"} style={{textDecoration: "none"}}>
                             <Box sx={{display: {md: 'flex'}}}>
-                                <img src={"assets/animia.png"} alt="Logo" height={40}/>
+                                <img src={animiaLogo} alt="Logo" height={40}/>
                             </Box>
                         </Link>
                         <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}/>

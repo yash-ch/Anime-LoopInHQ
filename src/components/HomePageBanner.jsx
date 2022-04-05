@@ -6,10 +6,8 @@ import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {useEffect, useState} from "react";
 import {TopBanner} from "../dataFetch/FilmsData";
-import {dialogContent} from "./GeneralComponents";
-import Dialog from "@mui/material/Dialog";
-import {DialogContent, useMediaQuery, useTheme} from "@mui/material";
-import DialogTitle from "@mui/material/DialogTitle";
+import Box from "@mui/material/Box";
+import {CircularProgress} from "@mui/material";
 
 toast.configure()
 
@@ -18,37 +16,21 @@ export default function HomePageBanner() {
     const [filmData, setFilmData] = useState([{}]);
     const [filmDescription, setDescription] = useState("");
     const CONTENT_LOADED = 1, ERROR = 3;
-    const [open, setOpen] = React.useState(false);
-    const theme = useTheme();
-    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
 
     useEffect(() => {
         if ((success !== CONTENT_LOADED && success !== ERROR)) {
-            animeRandomDataIteration();
+            TopBanner().then((data) => {
+                    setSuccess(CONTENT_LOADED);
+                    setDescription(data["description"]);
+                    setFilmData(data);
+
+                    if (window.innerWidth < 900 && filmDescription.length < 260) {
+                        setDescription(data["description"].substring(0, 260) + ".....");
+                    }
+                }
+            );
         }
     },)
-
-    function animeRandomDataIteration() {//for loading the data
-        TopBanner().then((data) => {
-                setSuccess(CONTENT_LOADED);
-                setDescription(data["description"]);
-                setFilmData(data);
-
-                if (window.innerWidth < 900 && filmDescription.length < 260) {
-                    setDescription(data["description"].substring(0, 260) + ".....");
-                }
-            }
-        );
-    }
 
     if (success === CONTENT_LOADED) {
         return (
@@ -64,34 +46,30 @@ export default function HomePageBanner() {
                 <Grid container className="button-grid">
                     <Grid item xs={4} lg={5.4}/>
                     <Grid item xs={4} lg={1}>
-                        <Button variant="contained" className="banner-buttons popup" onClick={handleClickOpen}><span
+                        <Button variant="contained" className="banner-buttons popup"><span
                             style={{fontSize: "180%"}}>🛈</span>&nbsp;&nbsp;<p><span
                             className="button-text">Know More</span>
                         </p></Button>
                     </Grid>
                 </Grid>
-                <Dialog
-                    open={open}
-                    onClose={handleClose}
-                    scroll={"paper"}
-                    fullScreen={fullScreen}
-                    aria-labelledby="scroll-dialog-title"
-                    aria-describedby="scroll-dialog-description"
-                    className="dialog"
-                >
-                    <DialogTitle id="scroll-dialog-title">{filmData["title"]}</DialogTitle>
-                    <DialogContent dividers={true}>
-                        {dialogContent(filmData)}
-                        <Button onClick={handleClose}>Close</Button>
-                    </DialogContent>
-                </Dialog>
                 <div className="gradient"/>
                 <div className="box"/>
             </div>
         );
     } else {
         return (
-            <div/>
+            <div style={{backgroundColor: "#000000", height: "80vh"}}>
+                <Box sx={{
+                    display: 'flex',
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    marginTop: '-12px',
+                    marginLeft: '-12px',
+                }}>
+                    <CircularProgress size={50}/>
+                </Box>
+            </div>
         );
     }
     ;

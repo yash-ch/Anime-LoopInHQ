@@ -3,11 +3,11 @@ import {Grid, Box} from '@mui/material';
 import "../css/footer.css"
 
 export default function AnimiaFooter() {
-    return <footer className="footer-up">
-        <Box className="sumplay-footer">
+    return (<footer>
+        <Box className="animia-footer">
             <Box width={"90vw"} height={"3px"} className="footer-line"/>
             <Box sx={{flexGrow: 1}} width="90vw" className="content-box">
-                <Grid container >
+                <Grid container>
                     <Grid item>
                         <Box>
                             © 2022. Made by Yash Chauhan.
@@ -22,5 +22,5 @@ export default function AnimiaFooter() {
                 </Grid>
             </Box>
         </Box>
-    </footer>
+    </footer>);
 }

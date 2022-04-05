@@ -28,3 +28,19 @@ export async function TopBanner() {
         return data[randomFilmIndex];
     });
 }
+
+export async function SingleAnimeData(animeid){
+    try {
+        const rawAnimeData = await fetch(`https://ghibliapi.herokuapp.com/films/${animeid}`, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+
+        return await rawAnimeData.json();
+
+    } catch (error) {
+        console.log(error)
+    }
+}

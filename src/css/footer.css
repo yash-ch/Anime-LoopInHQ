@@ -1,4 +1,4 @@
-.sumplay-footer {
+.animia-footer {
     width: 100%;
     background-color: black;
     padding: 20px 0;
@@ -9,7 +9,9 @@
 
 .footer-line {
     background-color: #747474;
-    margin: auto
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .content-box {
