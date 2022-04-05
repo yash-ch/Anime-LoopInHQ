@@ -46,7 +46,7 @@ export default function HomePageBanner() {
                 </p>
                 <Grid container className="button-grid">
                     <Grid item xs={4} lg={5.4}/>
-                    <Grid item xs={4} lg={1}>
+                    <Grid item xs={4} lg={1} style={{textDecoration:"none"}}>
                         <Link to={`/anime/${filmData.id}`}>
                             <Button variant="contained" className="banner-buttons popup"><span
                                 style={{fontSize: "180%"}}>🛈</span>&nbsp;&nbsp;<p><span
