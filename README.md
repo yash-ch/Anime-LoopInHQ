@@ -1,7 +1,7 @@
-# Anime Listing Website for LoopIn HQ internship 
+# Anime Listing Website 
 
 I have hosted this website, link is https://animiaa.pages.dev
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Data has been fetched from an API https://ghibliapi.herokuapp.com/films
 
 ## Available Scripts
 
