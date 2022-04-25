@@ -1,10 +1,10 @@
 import "../css/AnimeList.scss"
-import {Card, CardMedia, CircularProgress, Grid} from "@mui/material"
-import {useEffect, useState} from "react";
-import {GetRawData} from "../dataFetch/FilmsData";
+import { Card, CardMedia, CircularProgress, Grid } from "@mui/material"
+import { useEffect, useState } from "react";
+import { GetRawData } from "../dataFetch/FilmsData";
 import * as React from "react";
 import Box from "@mui/material/Box";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function AnimeList() {
     const [success, setSuccess] = useState(0);
@@ -13,19 +13,20 @@ export default function AnimeList() {
     const CONTENT_LOADED = 1, ERROR = 3;
 
     useEffect(() => {
+        console.log("useEffect for Anime List")
         if ((success !== CONTENT_LOADED && success !== ERROR)) {
             GetRawData().then((data) => {
-                    // console.log(data);
-                    setAnimeData(data);
-                    setSuccess(CONTENT_LOADED)
-                }
+                // console.log(data);
+                setAnimeData(data);
+                setSuccess(CONTENT_LOADED)
+            }
             )
         }
-    })
+    }, [])
 
     if (success === CONTENT_LOADED) {
         return (
-            <div id="parent" style={{zIndex: '3'}}>
+            <div id="parent" style={{ zIndex: '3' }}>
                 <p className="recommendations">
                     Anime Recommendations
                 </p>
@@ -39,7 +40,7 @@ export default function AnimeList() {
                                         marginLeft: "2.6vw",
                                         backgroundColor: "transparent"
                                     }}
-                                          className="popup portrait-poster">
+                                        className="popup portrait-poster">
                                         <CardMedia
                                             component="img"
                                             image={movie.image}
@@ -57,7 +58,7 @@ export default function AnimeList() {
         );
     } else {
         return (
-            <div style={{backgroundColor: "#000000", height: "100vh"}}>
+            <div style={{ backgroundColor: "#000000", height: "100vh" }}>
                 <Box sx={{
                     display: 'flex',
                     position: 'absolute',
@@ -66,7 +67,7 @@ export default function AnimeList() {
                     marginTop: '-12px',
                     marginLeft: '-12px',
                 }}>
-                    <CircularProgress size={50}/>
+                    <CircularProgress size={50} />
                 </Box>
             </div>
         );
